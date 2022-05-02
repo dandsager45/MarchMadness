@@ -1,0 +1,12 @@
+DAVID MEZZETTI - Picking an Upset - 2022
+
+ One strategy with the Kaggle competition is taking a couple risks with submissions. A very good model may place in the top 10% but often it comes down to luck in terms of placing high in the leaderboard. Taking a calculated risk.
+ 
+ One strategy could be to take a chance on a couple different games to attempt to differentiate a submission. 
+ Rather than guessing, let's look at the data and see if there are any picks that are better than others. We'll start with plotting the frequency of upsets
+ 
+ Computes Margin of Victory
+ Imports custom dataset of all tourney results, modified. Nothing special. 
+ Get average MOV per seed pairing
+ 
+ A lot of good data in this: worth taking a look at when making pick choices. One major observation is that LOCATION of the game 

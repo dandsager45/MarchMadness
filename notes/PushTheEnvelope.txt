@@ -1,0 +1,40 @@
+March Madness Model Observations
+
+Push the Envelope:
+Creates the following derived Stats: 
+WinRatio
+PPG
+PAllowedPG
+PRatio
+OTsPerGAme
+FGPerGAme
+FGRatio
+FGAllowedPerGame
+FG3PerGAme
+FG3Ratio
+FG3AllowedPerGame
+FTPerGAme
+FTRatio
+FGTllowedPerGame
+ORRatio
+DRRatio
+AstPerGame
+TOPerGame
+TtlPerGame
+BlkPerGame
+PFPerGame
+Seed
+
+And runs it through a model of all teams & season data from 2003+ by taking the delta of team1's attributes minus team2's. 
+This model is then run through a random forest using an 80/20 test/train split.
+
+~~General Observations~~ 3/29/22
+This is obviously just an example to get people started in creating a model. A few things stand out to me:
+I don't like using the pure "SUM" of an attribute per game. This disregards Tempo, which I think may be an important factor in these models. 
+It also does not directly use a game by game basis.
+It does not take ANY strenght of schedule, nor how "good" the opponent is into account besides their season statistics. This can have major problems - visualize if I took the stats of a highschool and put it against one of these models. 
+I also am not sure about using the delta of the teams as inputs, but I cannot figure out a better way to do so at first glance. Maybe there is a better way? Pass in all params from both teams? I will keep an eye on this in future 
+
+Introduces two libraries to look at:
+SKLearn for machine learning modeling in python
+Seaborn for data visualization

@@ -1,0 +1,5 @@
+SHIGEEERU - Submission tutorial with Markov_model
+https://www.kaggle.com/code/shigeeeru/submission-tutorial-with-markov-model
+
+
+This is an insane model. I don't think I can get much out of it - BUT it show some of the creativity that goes into these... I would NEVER have thought to use a markov model. Would be worth including in any ppts for the image of the markov-model 

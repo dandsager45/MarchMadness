@@ -1,0 +1,80 @@
+THEO VIE - Using Last Year's 2nd Place
+
+~~General Observations~~ 3/29/22
+
+This one may be the one to start looking at: they have a solution write-up & used the women's 2nd place as a baseline. Don't be too intimidated if they use things that I would have not thought of, or if they have implemented "unique" ideas I've had.
+
+OR NOT
+The model is a simple logistic regression using 4 features :
+
+Seed Difference
+FiveThirtyEight rating difference
+Win Ratio difference
+Average score gap difference
+
+ 
+ 
+ One KEY thing that this submission shows is an override capability. This, along with the FiveThirtyEight rating dataset is probably the largest takeaway from this submission.
+ 
+Overriding predictions
+I use a really agressive(sic) strategy for my 2nd place submission, and a safer one for the other which scored #15. I analysed(sic) FiveThirtyEight brackets and simulated a lot of matches in order to pick the teams. I will only go in the details of the risky one, which is the following :
+
+Picked 11 teams that would win their first match. I didn't want to use the 16 teams seeded <= 4 as I had a feeling there would be an upset. Which happened, thanks Arkansas.
+
+Stanford and Baylor beat every team seeded 3 or higher
+
+Connecticut and South Carolina beat every team seeded 4 or higher
+
+Maryland wins beats every team seeded 7 or higher
+
+I used p=0.99999 for overriding. So one mistake meant I was out. In total I overrode 22 matches. Most of them went smoothly except for three :
+
+Baylor vs Michigan went to OT.
+I messed up my code and ended up overwriting Stanford vs Arizona. I did not mean to do that, as it was basically a coin-flip.
+Texas A&M almost lost their first match.
+I estimate the probability of this strategy to have less than 1 chance out of 10 to work. But I knew that me having my 22 guesses correct would mean a very nice finish :)
+
+Thanks for reading !
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Features
+For each team at each season, I compute :
+
+Number of wins
+Number of losses
+Average score gap of wins
+Average score gap of losses
+And use the following features :
+
+Win Ratio
+Average score gap
+
+Uses a special dataset: https://www.kaggle.com/datasets/raddar/ncaa-men-538-team-ratings
+
+It seems like most of the processing is done on the Massey Ordinals dataset. 
+
+
+Processing
+I keep only systems that are common to all the years.
+
+Each row corresponds to a match between WTeamID and LTeamID, which was won by WTeamID.
+I only keep matches after 2003 since I don't have the ratings for the older ones.
+I start by aggregating features coresponding to each tem.
+
+Cross Validation
+Validate on season n, for n in the 10 last seasons.
+Train on earlier seasons
+Pipeline support classification (predict the team that wins) and regression (predict the score gap)
+
+Submission
+Note that this pipeline is leaky during the first stage of the competition : the LB will be underestimated since the last 4 models were trained

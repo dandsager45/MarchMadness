@@ -1,0 +1,20 @@
+PIXYZ0130 - 【日本語&ENG】MMLM-Men' AutoLGBM baseline ゆっくり実況
+
+~~General Observations~~ 3/29/22
+First off, it is very interesting to see this submission. It is clearly performed by a team that has some asian descent, as it is in both English and (Chinese, Japanese?)
+They give notes on why they are performing things, and it is VERY obvious that they are not familiar with basketball stats. They dont understand FGA & FGM
+
+They point out worry that seed of each team may not be relevant with independent features. I like that already, I have had that thought for a while. 
+They also notice that there are various rankings. They are taking the average for the time being.
+
+
+They utilize LightGBM like the prior submission that I observed. It seems to have a neat chart which showcases feature importance. 
+It shows that rankings are used quite heavily, and seeding not so much. 
+
+Fold 5 Epoch 20000
+
+They look to add more features, potentially taking ideas from others (Just like I'm doing right now!)
+
+Doesn't look like they have a good model, only using averages over the season. 
+
+
