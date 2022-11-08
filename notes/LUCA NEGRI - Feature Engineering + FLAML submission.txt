@@ -1,0 +1,105 @@
+March Madness Model Observations
+
+LUCA NEGRI: Feature Engineering + FLAML submission
+
+Adds:
+Game played
+Game Home
+Game Away
+Game OT
+Wins
+WinsHome
+WinsAway
+WinsOT
+Point diff
+Point diff win
+Point diff loss
+Losses
+LossesHome
+LossesAway
+LossesOT
+
+Takes SUM of generic data + additional fields
+Takes AVG of generic data + additional fields
+
+Imports seeds -> SETS all non tourney teams as seed 17
+
+Imports MASSEY rankings
+splits into q1 =.25, q3=.75 & develops:
+"Average Ranking"
+"Early Ranking"
+"Median Ranking"
+"Late Ranking"
+and deltas between the three
+
+Takes the results from the tournaments since 2003 & makes a combined dataframe of the results:
+
+All Base Stats
+Derived Stats Above
+Ranking Stats
+Results of Tourney
+
+
+Creates an additional featureset of A_Minus_B for ALL statistics and appends to dataframe
+
+Uses training set from pre 2016, test set post 2016 included. 
+
+sends training dataset to .csv file
+
+installs autolgbm (LOL)
+
+Params: task = None
+idx = "ID"
+targets = ["Pred"]
+features = None
+categorical_features = None
+use_gpu = False
+num_folds = 10
+seed = 42
+num_trials = 10000
+time_limit = 7200
+fast = False
+
+Model outputs into a percentage based output for the 2022 team games. 
+
+
+~~General Observations~~ 3/29/22
+
+Finally! A real submission!
+
+This has a couple of really good nuggets of information. It is the first time we see the rankings table used, as well as using a new machine learning model. 
+
+ALL the data is passed into the model, including the deltas. I like this. 
+
+I still do not like the sum of the stats, but he does choose to also include the averages, which is a little bit better I guess. 
+
+A bit more on the rankings, I don't like how all of the models are put together ranking-wise. This includes a combination of different things such as KenPOM, NET, etc. and I don't know how well taking the average of these actually does.
+
+No additional information based on conference or SOS is added in, but we do get some of that information indirectly from the ratings portion from models like KenPOM. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

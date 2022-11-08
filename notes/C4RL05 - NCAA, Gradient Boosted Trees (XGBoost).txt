@@ -1,0 +1,5 @@
+C4RL05 - NCAA, Gradient Boosted Trees (XGBoost)
+
+https://www.kaggle.com/code/cv13j0/ncaa-gradient-boosted-trees-xgboost
+
+Worth looking at if we want to learn more about boosted trees
